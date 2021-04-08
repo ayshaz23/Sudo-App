@@ -1,0 +1,50 @@
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col" >Name</th>
+    <th scope="col" >Email</th>
+    <th scope="col" >Body</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of temp_data">
+    <td >
+      {{i['id']}}
+    </td>
+    <td >
+      {{i['name']}}
+    </td>
+    <td >
+      {{i['email']}}
+    </td>
+    <td >
+      {{i['body']}}
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
+<!-- <app-data></app-data> -->
+
+
+<mat-card>
+  <h3 style="text-align: center;">Parent Component</h3>
+<label style="text-align: center;">Message will appear below when user click on the button from the child component.</label>
+<div style="text-align: center;">{{msgOnButtonClick}}</div>
+</mat-card>
+
+<p></p>
+<app-child
+(childButtonEvent)="receivedMessageHandler($event)"
+(onInitEvent)="receiveAutoMsgHandler($event)"
+[childMessage]="parentMessage"
+><app-child>
+
+
+
+
+
+
